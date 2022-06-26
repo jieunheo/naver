@@ -1,13 +1,11 @@
 .container {
-  background: yellow;
-
   @include mobile {
-    background: pink;
-  };
+    background: tomato;
+  }
 
   @include desktop {
-    background: skyblue;
-    @include flexboxCenter(column);
-    height: 100vh;
-  };
+    background: green;
+    // @include flexboxCenter(column);
+    // height: 100vh;
+  }
 }
