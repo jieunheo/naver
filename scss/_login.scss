@@ -1,11 +1,34 @@
 .container {
   @include mobile {
-    background: tomato;
+    padding-top: 25px;
+    @include paddingX(16px);
   }
 
   @include desktop {
-    background: green;
-    // @include flexboxCenter(column);
-    // height: 100vh;
+    padding-top: 50px;
+  }
+}
+
+.logo {
+  @include autoMargin;
+
+  @include mobile {
+    width: 51.25%;
+    min-width: 164px;
+    max-width: 230px;
+    @include marginY(45px);
+  }
+
+  @include desktop {
+    width: 230px;
+    @include marginY(50px);
+  }
+
+  &__link {
+    display: block;
+    
+    &:focus {
+     outline-offset: 10px;
+    }
   }
 }
