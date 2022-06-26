@@ -9,6 +9,7 @@
   }
 }
 
+// logo
 .logo {
   @include autoMargin;
 
@@ -31,4 +32,17 @@
      outline-offset: 10px;
     }
   }
+}
+
+// login form
+.loginForm__container {
+  @include flexbox(column);
+
+  @include desktop {
+    @include boxFixed;
+  }
+}
+
+.userSelectInfo {
+  order: 1;
 }

@@ -67,3 +67,27 @@ $breakpoint: 768px;
   padding-top: $top;
   padding-bottom: $bottom;
 }
+
+// box size + auto margin
+@mixin boxFixed($width: 460px) {
+  width: $width;
+  @include autoMargin;
+}
+@mixin boxFull($width: 100vw) {
+  width: $width;
+  position: relative;
+  left: 50%;
+  margin-left: math.div(-$width, 2);
+}
+
+// a11y mixin
+@mixin a11y {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  visibility: hidden;
+  clip: rect(0,0,0,0);
+  clip-path: inset(50%);
+}
