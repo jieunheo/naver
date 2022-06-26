@@ -385,6 +385,33 @@ body {
   color: #333;
 }
 
+.formControl__input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #dadada;
+  padding: 14px;
+}
+.formControl__button {
+  width: 100%;
+  height: 56px;
+  color: #fff;
+  background: #03cf5d;
+  padding: 0;
+  border: 0;
+}
+
+.errorMessage {
+  display: none;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  letter-spacing: -0.1em;
+  color: #ff1414;
+}
+
+.is--invalid .errorMessage {
+  display: block;
+}
+
 @media screen and (max-width: 767px) {
   .container {
     padding-top: 25px;
@@ -439,9 +466,21 @@ body {
     margin-right: auto;
   }
 }
+.loginForm__container .errorMessage {
+  margin-top: 8px;
+}
+
+.userPassword {
+  margin-top: 10px;
+}
 
 .userSelectInfo {
   order: 1;
+  margin-top: 10px;
+}
+
+.loginButton {
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=index.css.map */
