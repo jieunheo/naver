@@ -36,28 +36,27 @@
               </div>
               <span class="errorMessage">비밀번호는 10자리 이상 입력해주세요.</span>
             </div>
-            
-          <div class="userSelectInfo">
-            <div class="formControl loginState">
-              <input type="checkbox" class="formControl__checkbox loginState__checkbox" name="loginState" id="loginState">
-              <label for="loginState" class="formControl__label loginState__label">
-                로그인 상태유지
-              </label>
+            <div class="userSelectInfo">
+              <div class="formControl loginState">
+                <input type="checkbox" class="formControl__checkbox loginState__checkbox customCheckbox" name="loginState" id="loginState">
+                <label for="loginState" class="formControl__label loginState__label customCheckboxLabel">
+                  로그인 상태유지
+                </label>
+              </div>
+              <a href="https://www.naver.com" class="ipSecurityLink" target="_blank" rel="noreferrer noopener">
+                IP 보안
+              </a>
+              <div class="formControl ipSecurity">
+                <input type="checkbox" aria-label="IP 보안" class="formControl__checkbox ipSecurity__checkbox" name="ipSecurity" id="ipSecurity">
+                <label for="ipSecurity" class="formControl__label ipSecurity__label"></label>
+              </div>
             </div>
-            <a href="https://www.naver.com" class="ipSecurityLink" target="_blank" rel="noreferrer noopener">
-              IP 보안
-            </a>
-            <div class="formControl ipSecurity">
-              <input type="checkbox" aria-label="IP 보안" class="formControl__checkbox ipSecurity__checkbox" name="ipSecurity" id="ipSecurity">
-              <label for="ipSecurity" class="formControl__label ipSecurity__label"></label>
+            <div class="formControl loginButton">
+              <button type="submit" class="formControl__button">
+                로그인
+              </button>
             </div>
           </div>
-          <div class="formControl loginButton">
-            <button type="submit" class="formControl__button">
-              로그인
-            </button>
-          </div>
-        </div>
         </fieldset>
       </form>
     </main>

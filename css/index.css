@@ -400,6 +400,36 @@ body {
   border: 0;
 }
 
+.customCheckbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.customCheckbox:focus + .customCheckboxLabel::before {
+  /* outline: 2px solid $outline;
+  outline-offset: 2px; */
+  border: 2px solid #24388d;
+  border-radius: 4px;
+}
+.customCheckboxLabel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.customCheckboxLabel::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url("./../images/unchecked.svg") no-repeat 0 0/100% 100%;
+  margin-right: 4px;
+}
+.customCheckbox:checked + .customCheckboxLabel::before {
+  background-image: url("./../images/checked.svg");
+}
+
 .errorMessage {
   display: none;
   font-size: 0.75rem;

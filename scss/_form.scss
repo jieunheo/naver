@@ -17,6 +17,41 @@
   }
 }
 
+// custom checkbox
+.customCheckbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+
+  &:focus + &Label::before {
+    /* outline: 2px solid $outline;
+    outline-offset: 2px; */
+    border: 2px solid $outline;
+    border-radius: 4px;
+  }
+
+  &Label {
+    @include flexbox($align: center);
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background: url('./../images/unchecked.svg') no-repeat 0 0 / 100% 100%;
+      margin-right: 4px;
+    }
+  }
+
+  &:checked + &Label::before {
+    background-image: url('./../images/checked.svg');
+  }
+}
+
+
+.loginState__checkbox {
+}
+
 // error message
 .errorMessage {
   display: none;
