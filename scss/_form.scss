@@ -23,46 +23,49 @@
 .customCheckbox {
   appearance: none;
   position: absolute;
-  top: -1px;
+  top: 2px;
   width: 24px;
   height: 24px;
-  // opacity: 0;
+  /* 
+  // opacity 0인 경우 사용한 값
+  opacity: 0;
 
-  // &:focus + &Label::before {
-  //   /* outline: 2px solid $outline;
-  //   outline-offset: 2px; */
-  //   border: 2px solid $outline;
-  //   border-radius: 4px;
-  // }
-
+  &:focus + &Label::before {
+    // outline: 2px solid $outline;
+    // outline-offset: 2px;
+    border: 2px solid $outline;
+    border-radius: 4px;
+  }
+  */
   &Label {
-    min-height: 24px;
-    @include flexbox($align: center);
+    /* 
     // opacity 0인 경우 사용한 값
     
-    // &::before {
-    //   content: '';
-    //   width: 24px;
-    //   height: 24px;
-    //   background: url('./../images/unchecked.svg') no-repeat 0 0 / 100% 100%;
-    //   margin-right: 4px;
-    // }
-    
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background: url('./../images/unchecked.svg') no-repeat 0 0 / 100% 100%;
+      margin-right: 4px;
+    }
+    */
+
+    // cursor: pointer;
+    @include flexbox($align: center);
+    min-height: 28px;
     padding-left: 28px;
-    background: url('./../images/unchecked.svg') no-repeat 0 0 / 24px 24px;
+    background: url('./../images/unchecked.svg') no-repeat 0 50% / 24px 24px;
   }
-
-  // &:checked + &Label::before {
-  //   background-image: url('./../images/checked.svg');
-  // }
-
+  
+  /* 
+  // opacity 0인 경우 사용한 값
+  &:checked + &Label::before {
+    background-image: url('./../images/checked.svg');
+  }
+  */
   &:checked +&Label {
     background-image: url('./../images/checked.svg');
   }
-}
-
-
-.loginState__checkbox {
 }
 
 // error message

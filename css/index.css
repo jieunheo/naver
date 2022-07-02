@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Copyright (c) 2015 Spoqa, Inc.
  *
@@ -377,6 +378,11 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   font-family: "Spoqa Han Sans", sans-serif;
   font-weight: 400;
@@ -406,19 +412,47 @@ body {
 .customCheckbox {
   appearance: none;
   position: absolute;
-  top: -1px;
+  top: 2px;
   width: 24px;
   height: 24px;
+  /* 
+  // opacity 0인 경우 사용한 값
+  opacity: 0;
+
+  &:focus + &Label::before {
+    // outline: 2px solid $outline;
+    // outline-offset: 2px;
+    border: 2px solid $outline;
+    border-radius: 4px;
+  }
+  */
+  /* 
+  // opacity 0인 경우 사용한 값
+  &:checked + &Label::before {
+    background-image: url('./../images/checked.svg');
+  }
+  */
 }
 .customCheckboxLabel {
-  min-height: 24px;
+  /* 
+  // opacity 0인 경우 사용한 값
+
+  &::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: url('./../images/unchecked.svg') no-repeat 0 0 / 100% 100%;
+    margin-right: 4px;
+  }
+  */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
+  min-height: 28px;
   padding-left: 28px;
-  background: url("./../images/unchecked.svg") no-repeat 0 0/24px 24px;
+  background: url("./../images/unchecked.svg") no-repeat 0 50%/24px 24px;
 }
 .customCheckbox:checked + .customCheckboxLabel {
   background-image: url("./../images/checked.svg");
@@ -501,6 +535,50 @@ body {
 .userSelectInfo {
   order: 1;
   margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .userSelectInfo {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .loginState {
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ipSecurityLink {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ipSecurity {
+    display: none;
+  }
+}
+.ipSecurity__checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.ipSecurity__label::before {
+  display: inline-block;
+  width: 3em;
+  text-align: right;
+  content: "OFF";
+  color: #999;
+  font-weight: 700;
+}
+.ipSecurity__checkbox:checked + .ipSecurity__label::before {
+  content: "ON";
+  color: #03cf5d;
 }
 
 .loginButton {

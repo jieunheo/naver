@@ -54,6 +54,51 @@
 .userSelectInfo {
   order: 1;
   margin-top: 10px;
+  @include flexbox($align: center);
+
+  @include mobile {
+    justify-content: flex-end;
+  }
+}
+
+.loginState {
+  @include desktop {
+    margin-right: auto;
+    // flex-grow: 1; // 여백도 클릭이 됨
+  }
+}
+
+.ipSecurityLink {
+  @include mobile {
+    display: none;
+  }
+}
+
+.ipSecurity {
+  @include mobile {
+    display: none;
+  }
+  
+  
+  &__checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  &__label::before {
+    display: inline-block;
+    width: 3em;
+    text-align: right;
+    content: 'OFF';
+    color: $secondary;
+    font-weight: 700;
+  }
+
+  &__checkbox:checked + &__label::before {
+    content: 'ON';
+    color: $primary;
+  }
+  
 }
 
 .loginButton {
