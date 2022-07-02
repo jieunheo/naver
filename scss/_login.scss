@@ -69,6 +69,7 @@
 }
 
 .ipSecurityLink {
+  margin-right: 8px;
   @include mobile {
     display: none;
   }
@@ -79,26 +80,57 @@
     display: none;
   }
   
-  
+  // slide switch component
   &__checkbox {
     -webkit-appearance: none;
     appearance: none;
+    position: absolute;
   }
-  
+
+  &__label {
+    position: relative;
+    display: block;
+    width: 44px;
+    height: 24px;
+    background-color: $secondary;
+    border-radius: 12px;
+    padding: 0 4px;
+  }
+
   &__label::before {
-    display: inline-block;
-    width: 3em;
-    text-align: right;
-    content: 'OFF';
-    color: $secondary;
-    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-color: $white;
+    border-radius: 10px;
+    transform: translateY(-50%);
+    transition: all .2s;
+  }
+
+  &__checkbox:checked + &__label {
+    background-color: $primary;
   }
 
   &__checkbox:checked + &__label::before {
-    content: 'ON';
-    color: $primary;
+    transform: translate(100%, -50%);
   }
   
+  // ON/OFF text swich
+  // &__label::before {
+  //   display: inline-block;
+  //   width: 3em;
+  //   text-align: right;
+  //   content: 'OFF';
+  //   color: $secondary;
+  //   font-weight: 700;
+  // }
+
+  // &__checkbox:checked + &__label::before {
+  //   content: 'ON';
+  //   color: $primary;
+  // }
 }
 
 .loginButton {

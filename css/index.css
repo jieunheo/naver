@@ -553,6 +553,9 @@ body {
   }
 }
 
+.ipSecurityLink {
+  margin-right: 8px;
+}
 @media screen and (max-width: 767px) {
   .ipSecurityLink {
     display: none;
@@ -567,18 +570,33 @@ body {
 .ipSecurity__checkbox {
   -webkit-appearance: none;
   appearance: none;
+  position: absolute;
+}
+.ipSecurity__label {
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 24px;
+  background-color: #999;
+  border-radius: 12px;
+  padding: 0 4px;
 }
 .ipSecurity__label::before {
-  display: inline-block;
-  width: 3em;
-  text-align: right;
-  content: "OFF";
-  color: #999;
-  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  transition: all 0.2s;
+}
+.ipSecurity__checkbox:checked + .ipSecurity__label {
+  background-color: #03cf5d;
 }
 .ipSecurity__checkbox:checked + .ipSecurity__label::before {
-  content: "ON";
-  color: #03cf5d;
+  transform: translate(100%, -50%);
 }
 
 .loginButton {
