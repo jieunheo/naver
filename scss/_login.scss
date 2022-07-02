@@ -9,6 +9,50 @@
   }
 }
 
+// header
+.header {
+  padding: 0 1rem;
+  @include flexbox($dir: column, $align: flex-end);
+
+  @include desktop {
+    max-width: 1024px;
+    @include autoMargin;
+  }
+}
+
+// select language
+.customSelect {
+  order: -1;
+  height: 28px;
+  border: 1px solid $silverLight;
+  border-radius: 4px;
+  @include flexbox($align: center);
+  position: relative;
+
+  &__select {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    @include paddingX(8px, 20px);
+    background: transparent;
+    color: $silver;
+  }
+
+  .arrowDown {
+    pointer-events: none;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    height: 50%;
+    transform: translateY(-40%);
+
+    path {
+      fill: $silver;
+    }
+  }
+}
+
 // logo
 .logo {
   @include autoMargin;
