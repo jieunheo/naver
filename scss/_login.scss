@@ -79,12 +79,22 @@
   @include mobile {
     display: none;
   }
-  
+
+  /* // label outline 설정
+  &__checkbox:focus + &__label {
+    outline: 2px solid $outline;
+    outline-offset: 4px;
+  }
+  */
+
   // slide switch component
   &__checkbox {
     -webkit-appearance: none;
     appearance: none;
     position: absolute;
+    // focus일 때 outline
+    width: 44px;
+    height: 24px;
   }
 
   &__label {
